@@ -11,8 +11,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@grpc/proto-loader": "^0.5.3",
     "express": "^4.17.1",
-    "mongoose": "^5.7.9"
+    "grpc": "^1.24.2",
+    "mongoose": "^5.7.9",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
