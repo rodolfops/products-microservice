@@ -12,6 +12,5 @@ mongoose.connect('mongodb+srv://hashlab:hashlab@hashlab-gksy3.mongodb.net/hashla
 
 app.use(express.json());
 app.use(routes);
-// app.use(client);
 
 app.listen(8086);
