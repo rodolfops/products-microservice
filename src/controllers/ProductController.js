@@ -1,5 +1,6 @@
 const Product = require('../models/Product');
 const grpc = require('../client');
+const ProductDTO = require('../dataacessobjects/ProductDTO')
 
 // This should work both there and elsewhere.
 function isEmptyObject(obj) {
@@ -36,18 +37,19 @@ module.exports = {
             .sendMessage(request)
             .then(res => {
                 if(isEmptyObject(res)){
-                    // console.log("Empty res")
                     discounts.push(discountResponse)
                 } else {
                     discounts.push(res)
                 }
             })
             .catch(err => discounts.push(discountResponse));
-
-            // console.log("discounts: ",discounts);    
         }
-        return res.json({
-            "discounts": discounts
-        });                
+
+        var dtos = []
+        for(var i = 0; i < discounts.length; i++) {
+            dtos.push(new ProductDTO(products[i]._id, products[i].price_in_cents, products[i].title,
+                products[i].description, discounts[i].pct, discounts[i].valueInCents))
+        }
+        return res.json(dtos);                
     }
 };
