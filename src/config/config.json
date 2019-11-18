@@ -1,0 +1,8 @@
+{
+    "mongoConfig":{
+        "url": "mongodb+srv://hashlab:hashlab@hashlab-gksy3.mongodb.net/hashlab?retryWrites=true&w=majority"
+    },
+    "grpcConfig":{
+        "host":"localhost"
+    }
+}
