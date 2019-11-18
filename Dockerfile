@@ -1,6 +1,6 @@
 FROM node:latest
 MAINTAINER Rodolfo Saturnino
-COPY . /var/www
+COPY /products-microservice /var/www
 WORKDIR /var/www
 RUN npm install
 ENTRYPOINT npm run dev

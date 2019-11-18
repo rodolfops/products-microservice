@@ -26,7 +26,7 @@ module.exports = {
     },
     async get(req, res) {
         let products = await Product.find();
-        let user = req.get('X-USER-ID');
+        let user = '5dcafd086e768a5efaa9d6b3';//req.get('X-USER-ID');
         var discounts = [];
         for(var i = 0; i < products.length; i++) {
             

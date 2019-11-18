@@ -5,8 +5,8 @@ const PROTO_PATH = __dirname + '/proto/discount.proto';
 var packageDefinition = protoLoader.loadSync(PROTO_PATH, {});
 var discount_proto = grpc.loadPackageDefinition(packageDefinition);
 
-var client = new discount_proto.DiscountService('localhost:6565', grpc.credentials.createInsecure());
+var client = new discount_proto.DiscountService('java:6565', grpc.credentials.createInsecure());
 
 grpc_promise.promisifyAll(client);
 
-module.exports = client;
+module.exports = client
